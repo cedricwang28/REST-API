@@ -3,7 +3,12 @@ let router = express.Router();
 let Uber = require('../models/model.js');
 
 router.get('/uber', (req,res)=>{
-    res.send({type:"GET"});
+    Ninja.geoNear(
+        {type:'Point', coordinates:[parseFloat(req.query.lng),parseFloat(req.query.lat)]},
+        {maxDistance:100000, spherical:true}
+    ).then(function(data){
+        res.send(data);
+    });
 });
 
 router.post('/uber', (req,res,next)=>{

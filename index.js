@@ -2,11 +2,13 @@ let express = require('express');
 let router = require('./routes/api.js');
 let mongoose = require('./models/model.js');
 let bodyParser = require('body-parser');
+const connectDB = require('./connection');
 
 let app = express();
 
-// mongoose.connect('mongodb+srv://cedric:wtw651125@rest-wiaqe.mongodb.net/test?retryWrites=true&w=majority');
-mongoose.Promise = global.Promise;
+connectDB();
+
+app.use(express.static('public'));
 
 app.use(bodyParser.json());
 
