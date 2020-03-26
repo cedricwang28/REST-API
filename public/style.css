@@ -1,7 +1,7 @@
 body{
     font-family: 'Ubuntu', sans-serif;
     color: #555;
-    background: #ff5252;
+    background: purple;
     margin: 10px 30px;
 }
 #homepage{
@@ -78,7 +78,7 @@ span.false{
     border-radius: 10px;
     width: 10px;
     height: 10px;
-    background: #ff5252;
+    background: purple;
 }
 button{
     float: right;

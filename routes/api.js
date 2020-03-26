@@ -24,6 +24,12 @@ router.get('/uber', (req,res)=>{
     
 });
 
+router.get('/uber/:id', (req,res,next)=>{
+    Uber.find({_id:req.params.id}).then((data)=>{
+        res.send(data);
+    });
+});
+
 router.post('/uber', (req,res,next)=>{
     // let uber = new Uber();
     // uber.save();
